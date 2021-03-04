@@ -17,7 +17,7 @@ Our project is a text based choose your own adventure game. Users will be able t
 * HTML/CSS
 * API 
  
-# What you’ll have to learn: 
+# What we’ll have to learn: 
 * API
 * Advanced CSS
 * Visual Planning for Web Design
