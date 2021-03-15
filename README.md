@@ -1,7 +1,7 @@
 # SilverHippogryphs
 
 # Overview: 
-Our project is a text based choose your own adventure game. Users will be able to create an account for the game so they are able to play in their browser and be able to save their progress. 
+Our project is a comedic sci-fi text-based adventure game that can be played as two different characters. Users will be able to create an account for the game so they are able to play in their browser and be able to save their progress. A UI overlay will display over game elements such as the map(?), inventory, and text. Classic text-based gameplay with modern ideals and elements.
  
  
 # Features: 
