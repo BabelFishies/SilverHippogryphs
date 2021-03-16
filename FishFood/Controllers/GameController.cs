@@ -15,9 +15,7 @@ namespace FishFood.Controllers
 
         public IActionResult RenderGameBox()
         {
-            string result = requestStream.ReadToEnd(); 
-            
-            return Content(result);
+            return View();
         }
 
     }
