@@ -8,12 +8,8 @@ namespace FishFood.Controllers
 {
     public class GameController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
 
-        public IActionResult RenderGameBox()
+        public IActionResult Index()
         {
             return View();
         }
