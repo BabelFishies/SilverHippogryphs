@@ -1,0 +1,10 @@
+﻿body {
+}
+
+#inventory {
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    padding: 8px 20px;
+    margin: 24px -20px;
+    background-color: #f1f1f1;
+}

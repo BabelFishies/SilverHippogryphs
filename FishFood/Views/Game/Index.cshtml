@@ -3,8 +3,40 @@
 *@
 @{
 }
+<head>
+    <link rel="stylesheet" href="~/css/GameStyle.css" title="GameStyle" />
+</head>
 <body>
-    <span>
-        
-    </span>
+    <div id="main">
+        <div id="bar">
+
+        </div>
+        <div id="game-comp">
+            <div id="game-screen">
+                <div id="game-embed">
+                    @*Caira's game embed info goes here*@
+                </div>
+                <div id="inventory">
+                    @*table, calls on asp/get command, takes from database*@
+                    <table>
+                        @*for each item in the database table "inventoryitem", populate a tr IF a link has been pressed with 
+                            the id of the element = id of the inventoryitem*@
+
+                    </table>
+                </div>
+                <div id="character-portrait">
+                    @*box for photo, wwwroot*@
+                </div>
+            </div>
+            <div id="user-info">
+                <div id="profile">
+                    
+                </div>
+                <div id="save-load-new">
+
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
