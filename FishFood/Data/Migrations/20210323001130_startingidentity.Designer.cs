@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace FishFood.Data.Migrations
+namespace FishFood.data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210320195202_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20210323001130_startingidentity")]
+    partial class startingidentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

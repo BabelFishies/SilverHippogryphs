@@ -7,8 +7,8 @@
 {
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
-            Hello @{ var user = await UserManager.GetUserAsync(User); }
-            Hello @(user.FirstName)!
+            <!-- Hello @{ var user = await UserManager.GetUserAsync(User); } -->
+             Hello @(user.FirstName)! 
         </a>
     </li>
     <li class="nav-item">
