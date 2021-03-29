@@ -72,7 +72,7 @@ body {
 
 #passage {
      background: ghostwhite; width: 1100px;
-    height: 400px;
+    height: 500px;
     font-size: 20px;
     padding: 10px;
     border: 1px solid lightgray;
@@ -96,4 +96,12 @@ body {
     padding: 10px;
     border: 1px solid lightgray;
     margin: 10px;
+}
+
+#text{
+    text-align: center;
+}
+
+#options{
+    align-content: center;
 }

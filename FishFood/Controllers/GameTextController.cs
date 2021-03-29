@@ -18,14 +18,14 @@ namespace FishFood.Controllers
         {
             new GameText("placeholder text")
         };
-
+        
         public IEnumerable<GameText> GetAllText()
         {
             return gameTextList;
         }
 
 
-        [Route("api/[controller]/failed")]
+        
         public IHttpActionResult GetText(int id)
         {
             var text = gameTextList.FirstOrDefault((p) => p.Id == id);
