@@ -69,3 +69,31 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+#passage {
+     background: ghostwhite; width: 1100px;
+    height: 400px;
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    margin: 10px;
+    
+}
+#portrait {
+    background: no-repeat;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    margin: 10px;
+}
+
+#inventory {
+    background: ghostwhite;
+    width: 800px;
+    height: 200px;
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    margin: 10px;
+}

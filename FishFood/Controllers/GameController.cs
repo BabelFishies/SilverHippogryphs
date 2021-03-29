@@ -14,6 +14,18 @@ namespace FishFood.Controllers
             return View();
         }
 
+        public IActionResult LoadIntialView()
+        {
+            //take us to the saved most recent passage, or in mvp for monday, render one passage from the db
+            return View();
+        }
+
+        public IActionResult LoadNextView()
+        {
+            //when link is clicked, find next view and save current page to database
+            return View();
+        }
+
     }
 }
 /* TODO: Render a view that contains: 
