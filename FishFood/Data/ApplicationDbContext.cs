@@ -9,7 +9,8 @@ namespace FishFood.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        public DbSet<GameText> gameText { get; set; }
+        public DbSet<GameText> GameText { get; set; }
+        public DbSet<Option> Option { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

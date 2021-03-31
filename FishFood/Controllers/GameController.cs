@@ -3,28 +3,33 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FishFood.Models;
+using FishFood.Data;
 
 namespace FishFood.Controllers
 {
+
+
     public class GameController : Controller
     {
+        private ApplicationDbContext context;
+
+        public GameController(ApplicationDbContext dbContext)
+        {
+            context = dbContext;
+        }
 
         public IActionResult Index()
         {
-            return View();
+            //List<Employer> employers = context.Employers.ToList();
+            List<GameText> currentPassage = context.GameText.ToList();
+
+            //look for id query string
+            return View(currentPassage);
         }
 
-        public IActionResult LoadIntialView()
-        {
-            //take us to the saved most recent passage, or in mvp for monday, render one passage from the db
-            return View();
-        }
+      
 
-        public IActionResult LoadNextView()
-        {
-            //when link is clicked, find next view and save current page to database
-            return View();
-        }
 
     }
 }
