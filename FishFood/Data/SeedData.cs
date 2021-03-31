@@ -13,7 +13,10 @@ namespace FishFood.Data
         {
             var context = serviceProvider.GetRequiredService<ApplicationDbContext>();
             context.Database.EnsureCreated();
+            
             SeedGameText(context);
+            SeedOptions(context);
+
         }
         private static void SeedGameText(ApplicationDbContext context)
         {
@@ -26,6 +29,16 @@ namespace FishFood.Data
                 context.SaveChanges();
             }
 
+        }
+        private static void SeedOptions(ApplicationDbContext context)
+        {
+            if (!context.Option.Any())
+            {
+                context.Option.Add(new Option(1, "Investigate Wreckage"));
+                context.Option.Add(new Option(1, "Walk Toward City"));
+                context.Option.Add(new Option(1, "Walk Towards the Alien"));
+                context.SaveChanges();
+            }
         }
     }
 }

@@ -4,26 +4,25 @@
 @{
 }
 
-@model List<FishFood.Models.GameText>
+@model GameText
 <body>
     <div id="passage">
         <div id="text">
 
-            <a asp-controller="Game">@Model[0].StoryPassage</a> 
+            @Model.StoryPassage
                @*pull text from database*@
 
         </div>
         <div id="options">
             @*foreach loop, use hyperlinks(generate hyperlinks with passageid in them)*@
-            <a asp-controller="Game" asp-action="Index" asp-route-id="@Model[0].Id">Investigate wreckage</a>
-            <button>
-            </button>
-            <button>
-                Walk toward the city
-            </button>
-            <button>
-                Walk towards the alien
-            </button>
+            
+                @foreach (var option in Model.OptionList)
+                {
+                    <a asp-controller="Game" asp-action="Index" asp-route-id="@option.GameTextId">@option.Text</a>
+                }
+            
+
+
         </div>
     </div>
 

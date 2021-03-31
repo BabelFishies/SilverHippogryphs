@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FishFood.Models;
 using FishFood.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace FishFood.Controllers
 {
@@ -19,10 +20,18 @@ namespace FishFood.Controllers
             context = dbContext;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? id)
         {
             //List<Employer> employers = context.Employers.ToList();
-            List<GameText> currentPassage = context.GameText.ToList();
+            GameText currentPassage;
+            if (id.HasValue)
+            {
+                currentPassage = context.GameText.Find(id.Value);
+            }
+            else
+            {
+                 currentPassage = context.GameText.Include(x => x.OptionList).FirstOrDefault();
+            }
 
             //look for id query string
             return View(currentPassage);
