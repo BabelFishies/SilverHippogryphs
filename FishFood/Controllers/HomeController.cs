@@ -28,10 +28,7 @@ namespace FishFood.Controllers
             return View();
         }
 
-        public IActionResult NewGame()
-        {
-            return View();
-        }
+
 
         public IActionResult LoadGame()
         {
