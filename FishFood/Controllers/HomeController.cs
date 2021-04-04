@@ -23,6 +23,26 @@ namespace FishFood.Controllers
             return View();
         }
 
+        public IActionResult Settings()
+        {
+            return View();
+        }
+
+        public IActionResult NewGame()
+        {
+            return View();
+        }
+
+        public IActionResult LoadGame()
+        {
+            return View();
+        }
+
+        public IActionResult ViewLeaderboard()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
