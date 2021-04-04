@@ -19,7 +19,21 @@
 
 
     <p>Use the link below to begin your adventure!</p>
-    <p><link /><a href="/NewGamePage/NewGame">New Game</a></p>
+
+    @if(User.Identity.IsAuthenticated)
+    {
+        <p><link /><a href="/Game/Index"> Start Game</a></p>
+    }
+    else
+    {
+        <p><link /><a href="/NewGamePage/NewGame">New Game</a></p>
+
+    }
+
+
+    @*<p><link /><a href="/NewGamePage/NewGame">New Game</a></p> *@
+
+
 
     @* ../newGame
         <p><link /><a href="Home/LoadGame">Load Game</a></p>

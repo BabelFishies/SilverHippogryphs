@@ -10,11 +10,6 @@ namespace FishFood.Controllers
 {
     public class NewGamePageController : Controller
     {
-        [Authorize]
-        public IActionResult StartGame()
-        {
-            return RedirectToAction("Index", "Game");
-        }
         public IActionResult NewGame()
         {
             return View();
