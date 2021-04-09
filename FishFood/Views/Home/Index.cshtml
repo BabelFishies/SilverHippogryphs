@@ -2,27 +2,30 @@
     ViewData["Title"] = "Home Page";
 }
 
+<link rel="stylesheet" href="~/css/HomePage.css">
 
-<div class="text-center">
+<div style="background-color:black; font-family:Magneto;
+color: gold" class="text-center">
+    
     <h1 class="display-4">Welcome to BabelFishies</h1>
-    <p>
+    <p style="font-size:x-large">
         Babelfishies is a text based choose your own adventure game.
         There are many ways this story could go, and it is up to you to decide!
         As you progress through the story, there will be a variety of choices you can make for your character. It is possible that these choices may help your character progress further, or it could result in their death. Replay the game differently to see how it might affect your final outcome!
         Register for an account in order to save your progress without the use of cookies.
     </p>
 
-    <p>
+    <p style="font-size:x-large">
         The developers of Babelfishies met through a non-profit coding bootcamp. Our project is coded using the C# language,
         please feel free to check out our repository here: <a href="https://github.com/BabelFishies/SilverHippogryphs">Github</a>
     </p>
 
 
-    <p>Use the link below to begin your adventure!</p>
+    <p style="font-size:xx-large">Use the link below to begin your adventure!</p>
 
     @if(User.Identity.IsAuthenticated)
     {
-        <p><link /><a href="/Game/Index"> Start Game</a></p>
+        <p style="font-size:xx-large"><link /><a href="/Game/Index"> Start Game</a></p>
     }
     else
     {
