@@ -3,44 +3,65 @@
 }
 
 <link rel="stylesheet" href="~/css/HomePage.css">
-
-<div style="background-color:black; font-family:Magneto;
-color: gold" class="text-center">
-    
-    <h1 class="display-4">Welcome to BabelFishies</h1>
-    <p style="font-size:x-large">
-        Babelfishies is a text based choose your own adventure game.
-        There are many ways this story could go, and it is up to you to decide!
-        As you progress through the story, there will be a variety of choices you can make for your character. It is possible that these choices may help your character progress further, or it could result in their death. Replay the game differently to see how it might affect your final outcome!
-        Register for an account in order to save your progress without the use of cookies.
-    </p>
-
-    <p style="font-size:x-large">
-        The developers of Babelfishies met through a non-profit coding bootcamp. Our project is coded using the C# language,
-        please feel free to check out our repository here: <a href="https://github.com/BabelFishies/SilverHippogryphs">Github</a>
-    </p>
-
-
-    <p style="font-size:xx-large">Use the link below to begin your adventure!</p>
-
-    @if(User.Identity.IsAuthenticated)
-    {
-        <p style="font-size:xx-large"><link /><a href="/Game/Index"> Start Game</a></p>
-    }
-    else
-    {
-        <p><link /><a href="/NewGamePage/NewGame">New Game</a></p>
-
-    }
-
-
-    @*<p><link /><a href="/NewGamePage/NewGame">New Game</a></p> *@
+<script src="site.js"></script>
 
 
 
-    @* ../newGame
-        <p><link /><a href="Home/LoadGame">Load Game</a></p>
-        <p><link /><a href="Home/ViewLeaderboard">View Leaderboard</a></p>
-        <p><link /><a href="Home/Settings">Settings</a></p>*@
 
-</div>
+<form>
+    <div>
+        <h1 class="display-4">Welcome to BabelFishies</h1>
+        <p id="myTxt">
+            Babelfishies is a text based choose your own adventure game.
+            There are many ways this story could go, and it is up to you to decide!
+            As you progress through the story, there will be a variety of choices you can make for your character. It is possible that these choices may help your character progress further, or it could result in their death. Replay the game differently to see how it might affect your final outcome!
+            Register for an account in order to save your progress without the use of cookies.
+        </p>
+
+        <p style="font-size:x-large">
+            The developers of Babelfishies met through a non-profit coding bootcamp. Our project is coded using the C# language,
+            please feel free to check out our repository here: <a href="https://github.com/BabelFishies/SilverHippogryphs">Github</a>
+        </p>
+
+
+        <p style="font-size:xx-large">Use the link below to begin your adventure!</p>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <p style="font-size:xx-large"><link /><a href="/Game/Index"> Start Game</a></p>
+        }
+        else
+        {
+            <p><link /><a href="/NewGamePage/NewGame">New Game</a></p>
+
+        }
+
+    </div>
+   
+
+    <div>
+        <label for="rate">Rate</label><input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
+        <div class="rate-value">1</div>
+        <div class="clearfix"></div>
+    </div>
+    <div>
+        <label for="pitch">Pitch</label><input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+        <div class="pitch-value">1</div>
+        <div class="clearfix"></div>
+    </div>
+    <select>
+    </select>
+    <div class="controls">
+        <button id="play" type="submit">Play</button>
+    </div>
+</form>
+
+
+
+
+
+@* ../newGame
+    <p><link /><a href="Home/LoadGame">Load Game</a></p>
+    <p><link /><a href="Home/ViewLeaderboard">View Leaderboard</a></p>
+    <p><link /><a href="Home/Settings">Settings</a></p>*@
+
