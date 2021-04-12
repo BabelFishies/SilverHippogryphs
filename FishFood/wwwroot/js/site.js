@@ -3,16 +3,15 @@
 
 // Write your JavaScript code.
 
+
+
+
 var synth = window.speechSynthesis;
 
+//var allTxtOptions= [];
 var inputForm = document.querySelector('form');
-var readingMaterial = [inputTxt,
-    function (txtOptions) {
-        var i;
-        for (i = 0; i < txtOptions.length; i++) {
-            return txtOptions[i];
-        }
-    }]
+//TODO: the array stops it from playing on home page
+var readingMaterial = [inputTxt, txtOptions]
 var voiceSelect = document.querySelector('select');
 
 var pitch = document.querySelector('#pitch');
@@ -23,7 +22,11 @@ var rateValue = document.querySelector('.rate-value');
 var voices = [];
 
 
-
+//function allOptions(txtOptions) {
+//    for (i = 0; i < txtOptions.length; i++) {
+//        allTxtOptions.push(txtOptions[i]);
+//    }
+//}
 
 
 function populateVoiceList() {
@@ -102,3 +105,6 @@ rate.onchange = function() {
 voiceSelect.onchange = function () {
     speak();
 }
+
+//TODO stop speaking
+//TODO David as default
