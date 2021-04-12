@@ -6,7 +6,7 @@
 var synth = window.speechSynthesis;
 
 var inputForm = document.querySelector('form');
-var inputTxt = document.getElementById('myTxt');
+//var inputTxt = document.getElementById('myTxt');
 var voiceSelect = document.querySelector('select');
 
 var pitch = document.querySelector('#pitch');
