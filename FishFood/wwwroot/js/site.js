@@ -91,3 +91,7 @@ rate.onchange = function() {
 voiceSelect.onchange = function(){
   speak();
 }
+
+
+//needs a stop.
+// default david

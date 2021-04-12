@@ -8,7 +8,7 @@
 
 
 
-<form>
+
     <div>
         <h1 class="display-4">Welcome to BabelFishies</h1>
         <p>
@@ -18,10 +18,7 @@
             It is possible that these choices may help your character progress further, or it could result in their death.<br>
             Replay the game differently to see how it might affect your final outcome! <br>
                                                                                        <br>
-            Register for an account in order to save your progress without the use of cookies.<br>
-            <script>
-                var inputTxt = "Babelfishies is a text based choose your own adventure game. There are many ways this story could go and it is up to you to decide. As you progress through the story there will be a variety of choices you can make for your character. It is possible that these choices may help your character progress further or it could result in their death. Replay the game differently to see how it might affect your final outcome. Register for an account in order to save your progress without the use of cookies.";
-            </script>
+            Register for an account in order to save your progress without the use of cookies.<br />
         </p>
 
         <p style="font-size:x-large">
@@ -38,29 +35,33 @@
         }
         else
         {
-            <p><link /><a href="/NewGamePage/NewGame">New Game</a></p>
+            <p><link /><a href="/NewGamePage/NewGame">Start Game</a></p>
 
         }
 
     </div>
    
+    <form>
+        <script>
+            var inputTxt = "Babelfishies is a text based choose your own adventure game. There are many ways this story could go and it is up to you to decide. As you progress through the story there will be a variety of choices you can make for your character. It is possible that these choices may help your character progress further or it could result in their death. Replay the game differently to see how it might affect your final outcome. Register for an account in order to save your progress without the use of cookies. The developers of Babelfishies met through a non-profit coding bootcamp. Our project is coded using the C# language, please feel free to check out our repository here: Github. Start Game";
+        </script>
 
-    <div>
-        <label for="rate">Rate</label><input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
-        <div class="rate-value">1</div>
-        <div class="clearfix"></div>
-    </div>
-    <div>
-        <label for="pitch">Pitch</label><input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
-        <div class="pitch-value">1</div>
-        <div class="clearfix"></div>
-    </div>
-    <select>
-    </select>
-    <div class="controls">
-        <button id="play" type="submit">Play</button>
-    </div>
-</form>
+        <div>
+            <label for="rate">Rate</label><input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
+            <div class="rate-value">1</div>
+            <div class="clearfix"></div>
+        </div>
+        <div>
+            <label for="pitch">Pitch</label><input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+            <div class="pitch-value">1</div>
+            <div class="clearfix"></div>
+        </div>
+        <select>
+        </select>
+        <div class="controls">
+            <button id="play" type="submit">Play</button>
+        </div>
+    </form>
 
 
 
