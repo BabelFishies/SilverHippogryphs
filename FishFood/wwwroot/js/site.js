@@ -6,7 +6,13 @@
 var synth = window.speechSynthesis;
 
 var inputForm = document.querySelector('form');
-//var inputTxt = document.getElementById('myTxt');
+var readingMaterial = [inputTxt,
+    function (txtOptions) {
+        var i;
+        for (i = 0; i < txtOptions.length; i++) {
+            return txtOptions[i];
+        }
+    }]
 var voiceSelect = document.querySelector('select');
 
 var pitch = document.querySelector('#pitch');
@@ -15,6 +21,10 @@ var rate = document.querySelector('#rate');
 var rateValue = document.querySelector('.rate-value');
 
 var voices = [];
+
+
+
+
 
 function populateVoiceList() {
   voices = synth.getVoices().sort(function (a, b) {
@@ -52,7 +62,7 @@ function speak(){
     }
     if (inputTxt !== '') {
         //took out .value on (inputTxt) 53 & 55
-    var utterThis = new SpeechSynthesisUtterance(inputTxt);
+        var utterThis = new SpeechSynthesisUtterance(readingMaterial);
     utterThis.onend = function (event) {
         console.log('SpeechSynthesisUtterance.onend');
     }
@@ -74,10 +84,11 @@ function speak(){
 
 inputForm.onsubmit = function(event) {
   event.preventDefault();
-
-  speak();
-
-  inputTxt.blur();
+    var i = 0;
+    while (readingMaterial[i]) {
+        speak(i);
+        i++;
+    }
 }
 
 pitch.onchange = function() {
@@ -88,10 +99,6 @@ rate.onchange = function() {
   rateValue.textContent = rate.value;
 }
 
-voiceSelect.onchange = function(){
-  speak();
+voiceSelect.onchange = function () {
+    speak();
 }
-
-
-//needs a stop.
-// default david
