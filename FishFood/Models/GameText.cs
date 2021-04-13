@@ -26,7 +26,15 @@ namespace FishFood.Models
             StoryPassage = storyPassage;
         }
 
-
+        public string ConvertOptionListToJS()
+        {
+            var result = string.Empty;
+            foreach(var option in OptionList)
+            {
+                result += "'" + option.Text + "', ";
+            }
+            return $"[{result}]";
+        }
 
     }
 }
