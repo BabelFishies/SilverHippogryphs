@@ -6,20 +6,21 @@
 
 
 
-var synth = window.speechSynthesis;
+let synth = window.speechSynthesis;
 
 //var allTxtOptions= [];
-var inputForm = document.querySelector('form');
+let inputForm = document.querySelector('form');
 //TODO: the array stops it from playing on home page
-var readingMaterial = [inputTxt, txtOptions]
-var voiceSelect = document.querySelector('select');
+var txtOptions = ""
+let readingMaterial = [inputTxt, txtOptions]
+let voiceSelect = document.querySelector('select');
 
-var pitch = document.querySelector('#pitch');
-var pitchValue = document.querySelector('.pitch-value');
-var rate = document.querySelector('#rate');
-var rateValue = document.querySelector('.rate-value');
+let pitch = document.querySelector('#pitch');
+let pitchValue = document.querySelector('.pitch-value');
+let rate = document.querySelector('#rate');
+let rateValue = document.querySelector('.rate-value');
 
-var voices = [];
+let voices = [];
 
 
 //function allOptions(txtOptions) {
@@ -36,10 +37,10 @@ function populateVoiceList() {
       else if ( aname == bname ) return 0;
       else return +1;
   });
-  var selectedIndex = voiceSelect.selectedIndex < 0 ? 0 : voiceSelect.selectedIndex;
+  let selectedIndex = voiceSelect.selectedIndex < 0 ? 0 : voiceSelect.selectedIndex;
   voiceSelect.innerHTML = '';
   for(i = 0; i < voices.length ; i++) {
-    var option = document.createElement('option');
+    let option = document.createElement('option');
     option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
     
     if(voices[i].default) {
@@ -63,16 +64,16 @@ function speak(){
         console.error('speechSynthesis.speaking');
         return;
     }
-    if (inputTxt !== '') {
+    if (readingMaterial !== '') {
         //took out .value on (inputTxt) 53 & 55
-        var utterThis = new SpeechSynthesisUtterance(readingMaterial);
-    utterThis.onend = function (event) {
+        let utterThis = new SpeechSynthesisUtterance(readingMaterial);
+        utterThis.onend = function (event) {
         console.log('SpeechSynthesisUtterance.onend');
     }
     utterThis.onerror = function (event) {
         console.error('SpeechSynthesisUtterance.onerror');
     }
-    var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
+    let selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
     for(i = 0; i < voices.length ; i++) {
       if(voices[i].name === selectedOption) {
         utterThis.voice = voices[i];
@@ -87,7 +88,7 @@ function speak(){
 
 inputForm.onsubmit = function(event) {
   event.preventDefault();
-    var i = 0;
+    let i = 0;
     while (readingMaterial[i]) {
         speak(i);
         i++;
