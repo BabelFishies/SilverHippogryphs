@@ -6,6 +6,14 @@
 
 @model GameText
 <body>
+    <div>
+        <p>SciFi courtesy of BenSound.com</p>
+        <audio controls muted autoplay loop>
+            <source src="~/bensound-scifi.mp3" type="audio/mp3">
+            <p>Your browser does not support the audio element.
+            <p>
+        </audio>
+    </div>
     <div id="passage">
         <div id="text">
 
@@ -56,12 +64,8 @@
         <div class="controls">
             <button id="play" type="submit">Play</button>
         </div>
-    </form>
-    <audio controls autoplay loop>
-        <source src="~/bensound-scifi.mp3" type="audio/mp3">
-        <p>Your browser does not support the audio element.
-        <p>
-    </audio>
+    </form><br />
+
 </body>
 
 @*questions for 3/29/2021
