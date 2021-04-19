@@ -8,9 +8,8 @@
 
 let synth = window.speechSynthesis;
 
-//var allTxtOptions= [];
+
 let inputForm = document.querySelector('form');
-//TODO: the array stops it from playing on home page
 var txtOptions = ""
 let readingMaterial = [inputTxt, txtOptions]
 let voiceSelect = document.querySelector('select');
@@ -22,12 +21,6 @@ let rateValue = document.querySelector('.rate-value');
 
 let voices = [];
 
-
-//function allOptions(txtOptions) {
-//    for (i = 0; i < txtOptions.length; i++) {
-//        allTxtOptions.push(txtOptions[i]);
-//    }
-//}
 
 
 function populateVoiceList() {
@@ -65,7 +58,6 @@ function speak(){
         return;
     }
     if (readingMaterial !== '') {
-        //took out .value on (inputTxt) 53 & 55
         let utterThis = new SpeechSynthesisUtterance(readingMaterial);
         utterThis.onend = function (event) {
         console.log('SpeechSynthesisUtterance.onend');
