@@ -9,20 +9,28 @@ namespace FishFood.Models
         
         public string StoryPassage { get; set; }
         public List<Option> OptionList { get; set; } = new List<Option>();
+        
+        public string Title { get; set; }
+
+        public bool IsAWinner { get; set; }
+        public bool IsALoser { get; set; }
 
         public GameText()
         {
             
         }
         
-        public GameText (string storyPassage, List<Option> optionList) : this()
+        public GameText (string title, string storyPassage, bool isAWinner, bool isALoser) : this()
         {
+            Title = title;
             StoryPassage = storyPassage;
-            OptionList = optionList;
+            IsAWinner = isAWinner;
+            IsALoser = isALoser;
         }
 
-        public GameText (string storyPassage)
+        public GameText (string title, string storyPassage)
         {
+            Title = title;
             StoryPassage = storyPassage;
         }
 

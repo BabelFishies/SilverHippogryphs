@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace FishFood.Models
 {
-    public class Class
+    public class InventoryItem
     {
     }
 }

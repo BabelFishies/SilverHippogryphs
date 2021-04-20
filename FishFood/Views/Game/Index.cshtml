@@ -30,22 +30,29 @@
         <div id="options">
             @*foreach loop, use hyperlinks(generate hyperlinks with passageid in them)*@
 
-            @* convert to JS array *@
-            @foreach (var option in Model.OptionList)
-            {
-                <a asp-controller="Game" asp-action="Index" asp-route-id="@option.GameTextId">@option.Text</a>
+            
+                @foreach (var option in Model.OptionList)
+                {
+                    <a asp-controller="Game" asp-action="Index" asp-route-id="@option.LinkId">@option.Text</a>
+                }
+            
 
-            }
         </div>
     </div>
 
-    <div id="portrait">
+    <div>
+        <button href="/add">
+            Add Passage
+        </button>
+    </div>
+
+    @*<div id="portrait">
         This is where the character portrait will go.
     </div>
 
     <div id="inventory">
         This is where the inventory will go.
-    </div>
+    </div>*@
 
 
     <form>

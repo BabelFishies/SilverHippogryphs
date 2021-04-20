@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model FishFood.Models.AddPassageViewModel
+
+<h1>Add New Passage</h1>
+
+<form asp-controller="AddPassage" asp-action="ProcessAddPassageForm" method="post">
+
+    <div class="form-group">
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" />
+        <span asp-validation-for="Title"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="StoryPassage">Passage Text</label>
+        <input asp-for="StoryPassage" />
+        <span asp-validation-for="StoryPassage"></span>
+    </div>
+    <div class="form-check">
+        <label  class="form-check-label" asp-for="IsAWinner">Is this a Winning Passage?</label>
+        <input class="form-check-input" type="checkbox" asp-for="IsAWinner" />
+        <span asp-validation-for="IsAWinner"></span>
+    </div>
+    <div class="form-check">
+        <label class="form-check-label" asp-for="IsALoser">Is this a Losing Passage?</label>
+        <input class="form-check-input" type="checkbox" asp-for="IsALoser" />
+        <span asp-validation-for="IsALoser"></span>
+    </div>
+
+    <input type="submit" value="Submit" />
+
+</form>
