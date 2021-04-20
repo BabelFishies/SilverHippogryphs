@@ -47,5 +47,5 @@ namespace FishFood.Controllers
 /* TODO: Render a view that contains: 
  *      a box with the game in it
  *      nav buttons at top? of page
- *      
+ *      clicking option changes url and stops music. can we stop it?
  */

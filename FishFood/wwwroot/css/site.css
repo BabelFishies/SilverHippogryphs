@@ -2,14 +2,16 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    cursor: url("https://cdn.custom-cursor.com/db/4732/32/arrow2699.png"), auto;
 }
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #0366d6;
+    cursor: url("https://cdn.custom-cursor.com/db/4731/32/arrow2699.png"), auto;
 }
 
 .btn-primary {
@@ -19,9 +21,10 @@ a {
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    cursor: url("https://cdn.custom-cursor.com/db/4732/32/arrow2699.png"), auto;
 }
 
 /* Sticky footer styles
@@ -54,30 +57,33 @@ button.accept-policy {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+    cursor: url("https://cdn.custom-cursor.com/db/4732/32/arrow2699.png"), auto;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    cursor: url("https://cdn.custom-cursor.com/db/4732/32/arrow2699.png"), auto;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+    cursor: url("https://cdn.custom-cursor.com/db/4732/32/arrow2699.png"), auto;
 }
 
 #passage {
-     background: ghostwhite; width: 1100px;
+    background: ghostwhite;
+    width: 1100px;
     height: 500px;
     font-size: 20px;
     padding: 10px;
     border: 1px solid lightgray;
     margin: 10px;
-    
 }
 #portrait {
     background: no-repeat;

@@ -6,22 +6,36 @@
 
 @model GameText
 <body>
+    <div>
+        <p>Depressed by <a href="https://hauntermusic.bandcamp.com/">H A U N T E R</a>. His new band is <a href="https://reallyfrom.bandcamp.com/album/really-from">Really From</a>.</p>
+        <audio controls muted autoplay loop>
+            <source src="~/H A U N T E R - HAUNTER - 04 Depressed.mp3" type="audio/mp3">
+            <p>Your browser does not support the audio element.
+            <p>
+        </audio>
+    </div>
     <div id="passage">
         <div id="text">
 
             @Model.StoryPassage
-               @*pull text from database*@
+            @*pull text from database*@
+
+            <script>
+                var inputTxt = " @Model.StoryPassage ";
+                var txtOptions = @Html.Raw(Model.ConvertOptionListToJS());
+                //TODO: only plays last option.
+            </script>
 
         </div>
         <div id="options">
             @*foreach loop, use hyperlinks(generate hyperlinks with passageid in them)*@
+
             
                 @foreach (var option in Model.OptionList)
                 {
                     <a asp-controller="Game" asp-action="Index" asp-route-id="@option.LinkId">@option.Text</a>
                 }
             
-
 
         </div>
     </div>
@@ -39,6 +53,25 @@
     <div id="inventory">
         This is where the inventory will go.
     </div>*@
+
+
+    <form>
+        <div>
+            <label for="rate">Rate</label><input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
+            <div class="rate-value">1</div>
+            <div class="clearfix"></div>
+        </div>
+        <div>
+            <label for="pitch">Pitch</label><input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+            <div class="pitch-value">1</div>
+            <div class="clearfix"></div>
+        </div>
+        <select>
+        </select>
+        <div class="controls">
+            <button id="play" type="submit">Play</button>
+        </div>
+    </form><br />
 
 </body>
 
