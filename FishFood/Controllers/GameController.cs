@@ -22,11 +22,13 @@ namespace FishFood.Controllers
 
         public IActionResult Index(int? id)
         {
+            
+
             //List<Employer> employers = context.Employers.ToList();
             GameText currentPassage;
             if (id.HasValue)
             {
-                currentPassage = context.GameText.Find(id.Value);
+                currentPassage = context.GameText.Include(x => x.OptionList).Single(x => x.Id == id.Value);
             }
             else
             {

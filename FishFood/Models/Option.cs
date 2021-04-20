@@ -11,6 +11,8 @@ namespace FishFood.Models
         public int Id { get; set; }
       
         public int GameTextId { get; set; }
+
+        public int LinkId { get; set; }
         public string Text { get; set; }
 
         public Option()
@@ -18,10 +20,11 @@ namespace FishFood.Models
 
         }
         
-        public Option( int gameTextId, string text)
+        public Option( int gameTextId, int linkId, string text)
         {
           
             GameTextId = gameTextId;
+            LinkId = linkId;
             Text = text;
         }
     }
