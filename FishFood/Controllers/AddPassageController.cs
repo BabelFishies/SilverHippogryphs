@@ -5,9 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using FishFood.Models;
 using FishFood.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FishFood.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AddPassageController : Controller
     {
         private ApplicationDbContext context;
