@@ -41,7 +41,7 @@ namespace FishFood.Data
                 context.Option.Add(new Option(1, 1, "Investigate Wreckage"));
                 context.Option.Add(new Option(1, 1, "Walk Toward City"));
                 context.Option.Add(new Option(1, 1, "Walk Towards the Alien"));
-                context.Option.Add(new Option(1, 2, "Walk towards the McDank's Kentucky Boiled Mystery Meat Shack"));
+                context.Option.Add(new Option(1, 2, "Walk towards the McDanks Kentucky Boiled Mystery Meat Shack"));
                 context.Option.Add(new Option(2, 1, "Bring me back to passage 1."));
                 
                 context.SaveChanges();
