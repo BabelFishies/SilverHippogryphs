@@ -49,7 +49,7 @@ namespace FishFood.Controllers
 
                 context.GameText.Add(newPassage);
                 context.SaveChanges();
-                return Redirect("../add");
+                return Redirect("../addpassage");
 
 
             }

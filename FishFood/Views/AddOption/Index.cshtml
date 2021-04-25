@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model FishFood.Models.AddOptionViewModel
+
+<h1>Add New Passage</h1>
+
+<form asp-controller="AddOption" asp-action="ProcessAddOptionForm" method="post">
+
+    <div class="form-group">
+        <label asp-for="Text">Option Text</label>
+        <input asp-for="Text" />
+        <span asp-validation-for="Text"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="GameTextId">Passage Text</label>
+
+        <select asp-for="GameTextId" >
+            <option value="0">--Select Skill--</option>
+        </select>
+
+
+        <input asp-for="GameTextId" />
+        <span asp-validation-for="GameTextId"></span>
+    </div>
+    <div>
+
+    </div>
+    @*consider an Enum or LIst Dropdown of predesignated id's*@
+
+    <input type="submit" value="Submit" />
+
+</form>
+
+
