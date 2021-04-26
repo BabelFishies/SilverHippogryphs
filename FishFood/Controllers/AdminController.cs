@@ -1,4 +1,5 @@
-﻿using FishFood.Models;
+﻿using FishFood.Data;
+using FishFood.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -26,11 +27,13 @@ namespace FishFood.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(AppRole role)
         {
+
             var roleExist = await roleManager.RoleExistsAsync(role.RoleName);
             if (!roleExist)
             {
-                var result = await roleManager.CreateAsync(new AppRole());
+                var result = await roleManager.CreateAsync(new AppRole(role.RoleName));
             }
+            
             return View();
         }
     }

@@ -39,7 +39,6 @@ namespace FishFood
                 .AddRoles<AppRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-
             //services.AddIdentity<AppUser, AppRole>()
             //    .AddDefaultTokenProviders()
             //    .AddDefaultUI()

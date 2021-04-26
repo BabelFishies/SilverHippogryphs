@@ -11,6 +11,8 @@ namespace FishFood.Data
     {
         public DbSet<GameText> GameText { get; set; }
         public DbSet<Option> Option { get; set; }
+        public DbSet<AppRole> AppRoles { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

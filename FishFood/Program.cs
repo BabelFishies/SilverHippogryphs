@@ -21,7 +21,7 @@ namespace FishFood
             {
                 var serviceProvider = scope.ServiceProvider;
                 SeedData.Initialize(serviceProvider);
-
+                //RoleSeedData.Initialize(serviceProvider);
             }
 
             host.Run();
