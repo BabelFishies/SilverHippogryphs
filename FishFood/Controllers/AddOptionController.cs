@@ -59,45 +59,64 @@ namespace FishFood.Controllers
         }
         public IActionResult Delete()
         {
-           
+            List<GameText> gameTextList = context.GameText.ToList();
+            ViewBag.GameText = gameTextList;
+            List<Option> optionList = context.Option.ToList();
+            ViewBag.Option = optionList;
+
 
             return Redirect("../adminpage");
         }
         [HttpPost]
-        public IActionResult ProcessDelete(List<Option> options)
+        public IActionResult ProcessDelete(int option)
         {
-            foreach (Option option in options)
+            var data = context.Option.FirstOrDefault(x => x.Id == option);
+            if (ModelState.IsValid)
             {
-                context.Option.Remove(option);
+                context.Option.Remove(data);
                 context.SaveChanges();
+                return RedirectToAction("../adminpage");
             }
-            return Redirect("../adminpage");
-
-            //find option by id, delete
+            else
+                return View("../adminpage");
         }
-        public IActionResult Edit(AddOptionViewModel addOptionViewModel)
+    
+        public IActionResult Edit(int optionId)
         {
             List<GameText> gameTextList = context.GameText.ToList();
             ViewBag.GameText = gameTextList;
             List<Option> optionList = context.Option.ToList();
             ViewBag.Option = optionList;
 
-            return View(addOptionViewModel);
+
+            var data = context.Option.Where(x => x.Id == optionId).SingleOrDefault();
+            return View(data);
+
+           
         }
         [HttpPost]
-        public IActionResult SubmitEditOptionForm(Option option)
+        public IActionResult SubmitEditOptionForm(int optionId, AddOptionViewModel option)
         {
+            List<GameText> gameTextList = context.GameText.ToList();
+            ViewBag.GameText = gameTextList;
+            List<Option> optionList = context.Option.ToList();
+            ViewBag.Option = optionList;
+
+
+            var data = optionList[optionId];
                 // controller code will go here
                 if (ModelState.IsValid)
                 {
-
+                data.Text = option.Text;
+                data.GameTextId = option.GameTextId;
+                data.LinkId = option.LinkId;
                 
-                context.Entry(option).State = EntityState.Modified;
-                context.SaveChanges();
-                return Redirect("../adminpage");
+                //context.Entry(option).State = EntityState.Modified;
+                    context.SaveChanges();
+                   return Redirect("../adminpage");
 
-                }
-                return View("..homes/addoption", option);
+                }else 
+                     return View("..homes/addoption", option);
             }
         }
     }
