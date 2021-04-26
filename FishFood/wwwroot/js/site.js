@@ -9,8 +9,8 @@
 let synth = window.speechSynthesis;
 
 
-let inputForm = "";
-var txtOptions = "";
+let inputForm = document.querySelector('form');
+var txtOptions = ""
 let readingMaterial = [inputTxt, txtOptions]
 let voiceSelect = document.querySelector('select');
 
