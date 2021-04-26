@@ -1,0 +1,12 @@
+﻿body {
+    background-image: url(fishfood.background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-family: Eras ITC;
+}
+#settings {
+    background-color: white;
+    text-align:center;
+    margin: 20px 400px;
+}
