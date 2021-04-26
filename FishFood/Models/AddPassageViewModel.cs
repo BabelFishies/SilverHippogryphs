@@ -16,6 +16,7 @@ namespace FishFood.Models
         public string Title { get; set; }
         public bool IsAWinner { get; set; }
         public bool IsALoser { get; set; }
+        
 
     }
 }

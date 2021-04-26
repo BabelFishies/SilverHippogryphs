@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model FishFood.Models.AddOptionViewModel
+
+<h1>Add New Option</h1>
+
+<form asp-controller="AddOption" asp-action="SubmitEditOptionForm" method="post">
+
+    <div class="form-group">
+        <label asp-for="Text">Option Text</label>
+        <input asp-for="Text" />
+        <span asp-validation-for="Text"></span>
+    </div>
+    <div class="form-select">
+        <label asp-for="GameTextId">What passage does this appear on?</label>
+
+        <select asp-for="GameTextId">
+            <option value="0">--Select Passage--</option>
+            @foreach (GameText passage in ViewBag.GameText)
+            {
+                <option value="@passage.Id"> @passage.Title </option>
+            }
+        </select>
+
+        <span asp-validation-for="GameTextId"></span>
+    </div>
+    <div class="form-select">
+        <label asp-for="LinkId">What passage does this link to?</label>
+
+        <select asp-for="LinkId">
+            <option value="0">--Select Passage--</option>
+            @foreach (GameText passage in ViewBag.GameText)
+            {
+                <option value="@passage.Id"> @passage.Title </option>
+            }
+        </select>
+    </div>
+    @*consider an Enum or LIst Dropdown of predesignated id's*@
+
+    <input type="submit" value="Submit" />
+
+</form>
