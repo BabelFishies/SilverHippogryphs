@@ -26,6 +26,7 @@ namespace FishFood
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
@@ -34,25 +35,32 @@ namespace FishFood
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddRazorPages();
 
+            services.AddDefaultIdentity<AppUser>()
+                .AddRoles<AppRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+
+
+            //services.AddIdentity<AppUser, AppRole>()
+            //    .AddDefaultTokenProviders()
+            //    .AddDefaultUI()
+            //    .AddEntityFrameworkStores<ApplicationDbContext>();
+            //services.AddControllersWithViews();
+
+
             services.AddAuthentication()
                 .AddGoogle(options =>
                 {
-                    IConfigurationSection googleAuthNSection =
-                        Configuration.GetSection("Authentication:Google");
+                   IConfigurationSection googleAuthNSection =
+                   Configuration.GetSection("Authentication:Google");
 
-                    options.ClientId = googleAuthNSection["ClientId"];
-                    options.ClientSecret = googleAuthNSection["ClientSecret"];
+                   options.ClientId = googleAuthNSection["ClientId"];
+                   options.ClientSecret = googleAuthNSection["ClientSecret"];
                 });
-
-            services.AddIdentity<AppUser, AppRole>()
-                .AddDefaultTokenProviders()
-                .AddDefaultUI()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DbContextOptions<ApplicationDbContext> identityDbContextOptions, UserManager<AppUser> userManager, RoleManager<AppRole> roleManager)
+        //public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {

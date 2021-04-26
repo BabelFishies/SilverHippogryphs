@@ -8,11 +8,9 @@ namespace FishFood.Models
 {
     public class AppRole : IdentityRole<int>
     {
-        public AppRole() { }
-
-        public AppRole(string name)
+        public AppRole() 
         {
-            Name = name;
         }
+        public string RoleName { get; set; }
     }
 }
