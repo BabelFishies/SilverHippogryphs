@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FishFood.Models;
 using FishFood.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace FishFood.Controllers
 {
@@ -49,11 +50,49 @@ namespace FishFood.Controllers
 
                 context.GameText.Add(newPassage);
                 context.SaveChanges();
-                return Redirect("../addpassage");
+                return Redirect("../adminpage");
 
 
             }
             return View("../home/addpassage", addPassageViewModel);
+        }
+        public IActionResult Delete()
+        {
+
+
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Delete(List<GameText> passages)
+        {
+            foreach (GameText passage in passages)
+            {
+                context.GameText.Remove(passage);
+                context.SaveChanges();
+            }
+            return Redirect("../adminpage");
+
+            //find option by id, delete
+        }
+        public IActionResult Edit(AddPassageViewModel addPassageViewModel)
+        {
+
+            return View(addPassageViewModel);
+        }
+        [HttpPost]
+        public IActionResult SubmitEditOptionForm(AddPassageViewModel addPassageViewModel)
+        {
+            // controller code will go here
+            if (ModelState.IsValid)
+            {
+
+
+                context.Entry(addPassageViewModel).State = EntityState.Modified;
+                context.SaveChanges();
+                return Redirect("../adminpage");
+
+            }
+            return View("..homes/addoption", addPassageViewModel);
         }
 
     }

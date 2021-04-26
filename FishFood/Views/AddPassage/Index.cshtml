@@ -12,22 +12,24 @@
 
     <div class="form-group">
         <label asp-for="Title">Title</label>
-        <input asp-for="Title" />
+        <input class="form-control" asp-for="Title" />
         <span asp-validation-for="Title"></span>
     </div>
     <div class="form-group">
         <label asp-for="StoryPassage">Passage Text</label>
-        <input asp-for="StoryPassage" />
+        <textarea class="form-control" rows="3"></textarea>
         <span asp-validation-for="StoryPassage"></span>
     </div>
     <div class="form-check">
-        <label  class="form-check-label" asp-for="IsAWinner">Is this a Winning Passage?</label>
         <input class="form-check-input" type="checkbox" asp-for="IsAWinner" />
+        <label  class="form-check-label" asp-for="IsAWinner">Is this a Winning Passage?</label>
+        
         <span asp-validation-for="IsAWinner"></span>
     </div>
     <div class="form-check">
-        <label class="form-check-label" asp-for="IsALoser">Is this a Losing Passage?</label>
         <input class="form-check-input" type="checkbox" asp-for="IsALoser" />
+        <label class="form-check-label" asp-for="IsALoser">Is this a Losing Passage?</label>
+        
         <span asp-validation-for="IsALoser"></span>
     </div>
 

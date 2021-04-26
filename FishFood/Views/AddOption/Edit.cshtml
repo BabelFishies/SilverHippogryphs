@@ -8,7 +8,7 @@
 
 <h1>Add New Option</h1>
 
-<form asp-controller="AddOption" asp-action="ProcessAddOptionForm" method="post">
+<form asp-controller="AddOption" asp-action="SubmitEditOptionForm" method="post">
 
     <div class="form-group">
         <label asp-for="Text">Option Text</label>
@@ -18,9 +18,9 @@
     <div class="form-select">
         <label asp-for="GameTextId">What passage does this appear on?</label>
 
-        <select asp-for="GameTextId" >
+        <select asp-for="GameTextId">
             <option value="0">--Select Passage--</option>
-            @foreach(GameText passage in ViewBag.GameText)
+            @foreach (GameText passage in ViewBag.GameText)
             {
                 <option value="@passage.Id"> @passage.Title </option>
             }
@@ -44,5 +44,3 @@
     <input type="submit" value="Submit" />
 
 </form>
-
-

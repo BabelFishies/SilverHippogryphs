@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FishFood.Models;
 using FishFood.Data;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace FishFood.Controllers
 {
@@ -19,6 +19,11 @@ namespace FishFood.Controllers
         }
         public IActionResult Index()
         {
+            List<GameText> gameTextList = context.GameText.ToList();
+            ViewBag.GameText = gameTextList;
+            List<Option> optionList = context.Option.ToList();
+            ViewBag.Option = optionList;
+
             return View();
         }
         public IActionResult Add()
@@ -39,18 +44,61 @@ namespace FishFood.Controllers
                     GameTextId = addOptionViewModel.GameTextId,
                     LinkId = addOptionViewModel.LinkId
 
-                    
+
 
 
                 };
 
                 context.Option.Add(newOption);
                 context.SaveChanges();
-                return Redirect("../addoption");
+                return Redirect("../adminpage");
 
 
             }
             return View("../home/addoption", addOptionViewModel);
         }
+        public IActionResult Delete()
+        {
+           
+
+            return Redirect("../adminpage");
+        }
+        [HttpPost]
+        public IActionResult ProcessDelete(List<Option> options)
+        {
+            foreach (Option option in options)
+            {
+                context.Option.Remove(option);
+                context.SaveChanges();
+            }
+            return Redirect("../adminpage");
+
+            //find option by id, delete
+        }
+        public IActionResult Edit(AddOptionViewModel addOptionViewModel)
+        {
+            List<GameText> gameTextList = context.GameText.ToList();
+            ViewBag.GameText = gameTextList;
+            List<Option> optionList = context.Option.ToList();
+            ViewBag.Option = optionList;
+
+            return View(addOptionViewModel);
+        }
+        [HttpPost]
+        public IActionResult SubmitEditOptionForm(Option option)
+        {
+                // controller code will go here
+                if (ModelState.IsValid)
+                {
+
+                
+                context.Entry(option).State = EntityState.Modified;
+                context.SaveChanges();
+                return Redirect("../adminpage");
+
+                }
+                return View("..homes/addoption", option);
+            }
+        }
     }
-}
+

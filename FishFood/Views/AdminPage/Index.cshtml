@@ -1,0 +1,104 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="container body-content">
+    <h1>Admin Home</h1>
+    <h2 class="centered">All Passages</h2>
+</div>
+
+<table class="centeredTable">
+    <tr>
+        <th>
+            Passage Title
+        </th>
+        <th>
+            Passage Id
+        </th>
+    </tr>
+   
+  @foreach(GameText passage in ViewBag.GameText)
+           
+            {
+<tr>
+    <td>
+        <a href="../game/index/@passage.Id">@passage.Title</a>
+    </td>
+    <td>
+        @passage.Id
+    </td>
+    <td>
+        <a asp-controller="AddPassage" asp-action="Edit"> Edit Passage </a>
+    </td>
+    <td>
+        <a asp-controller="AddPassage" asp-action="Delete"> Delete Passage </a>
+    </td>
+</tr>
+                
+                
+            }
+</table>
+
+<table class="centeredTable">
+    <tr>
+        <th>
+            Option Text
+        </th>
+        <th>
+            Option Id
+        </th>
+        <th>
+            Featured On
+        </th>
+        <th>
+            Links To
+        </th>
+    </tr>
+
+    @foreach (Option option in ViewBag.Option)
+
+    {
+        <tr>
+            <td>
+                <a href="../game/index/@option.Id">@option.Text</a>
+            </td>
+            <td>
+                @option.Id
+            </td>
+            <td>
+                @option.GameTextId
+            </td>
+            <td>
+                @option.LinkId
+            </td>
+            <td>
+                <a asp-controller="AddOption" asp-action="Edit"> Edit Option </a>
+            </td>
+            <td>
+                <a asp-controller="AddOption" asp-action="ProcessDelete"> Delete Option </a>
+            </td>
+        </tr>
+
+
+    }
+</table>
+
+
+
+
+<div>
+    <h2>Editing Controls</h2>
+    <h3>Instructions</h3>
+    <p>
+        First add passages, then add options. 
+    </p>
+    <button onclick="document.location='../addpassage'">
+        Add Passage
+    </button>
+    <button onclick="document.location='../addoption'">
+        Add Option
+    </button>
+
+
+</div>
