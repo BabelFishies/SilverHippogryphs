@@ -31,9 +31,12 @@ namespace FishFood.Controllers
             var roleExist = await roleManager.RoleExistsAsync(role.RoleName);
             if (!roleExist)
             {
-                var result = await roleManager.CreateAsync(new AppRole(role.RoleName));
+                var appRole = new AppRole
+                {
+                    RoleName = role.RoleName
+                };
+                var result = await roleManager.CreateAsync(appRole);
             }
-            
             return View();
         }
     }
